@@ -1,14 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
-import { times } from 'ramda'
+import React from 'react';
+import styled from 'styled-components';
+import { times } from 'ramda';
 
-import { Board, Square } from '..'
+import { Board, Square } from '..';
 
 const makeSquares = () =>
 	times(
 		idx => <Square key={idx} index={idx} player={idx % 2 === 0 ? 'x' : 'o'} />,
 		9
-	)
+	);
 
 const StyledApp = styled.div`
 	display: grid;
@@ -18,13 +18,13 @@ const StyledApp = styled.div`
 	margin: 0;
 	padding: 0;
 	width: 100vw;
-`
-StyledApp.displayName = 'StyledApp'
+`;
+StyledApp.displayName = 'StyledApp';
 
 export default function App() {
 	return (
 		<StyledApp>
 			<Board>{makeSquares()}</Board>
 		</StyledApp>
-	)
+	);
 }
